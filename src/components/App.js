@@ -6,14 +6,31 @@ import SignUpPage from './SignUpPage'
 import PrivateRoute from './PrivateRoute'
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = props.user
+  }
+
   render = () => {
+    console.log(this.props.user)
     return (
       <Switch>
-        <Route path="/signin" component={SignInPage} />
-        <Route path="/signup" component={SignUpPage} />
-        <PrivateRoute path="/"><HomePage /></PrivateRoute>
+        <Route path="/signin">
+          <SignInPage user={this.state} setUser={this.setUser} />
+        </Route>
+        <Route path="/signup">
+          <SignUpPage user={this.state} setUser={this.setUser} />
+        </Route>
+        <PrivateRoute isAuthenticated={this.state.isAuthenticated} path="/">
+          <HomePage user={this.state} setUser={this.setUser} />
+        </PrivateRoute>
       </Switch>
     )
+  }
+
+  setUser = (user) => {
+    this.setState(user)
   }
 }
 

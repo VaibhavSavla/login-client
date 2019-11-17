@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import AuthService from "../services/auth.service";
@@ -59,13 +60,19 @@ class SignUpPage extends React.Component {
   };
 
   signUp = async () => {
-    await AuthService.register({
+    const profile = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.email,
       password: this.state.password
-    });
+    }
+    const response = await AuthService.register(profile);
+
+    if (response.status === 200) {
+      this.props.setUser({ isAuthenticated: true, profile })
+      this.props.history.replace('/')
+    }
   };
 }
 
-export default SignUpPage;
+export default withRouter(SignUpPage);
