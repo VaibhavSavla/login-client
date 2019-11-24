@@ -1,3 +1,4 @@
+import './SignUpPage.css';
 import React from "react";
 import { withRouter, Link } from 'react-router-dom';
 import TextField from "@material-ui/core/TextField";
@@ -43,7 +44,7 @@ class SignInPage extends React.Component {
 
   signIn = async () => {
     const response = await AuthService.login({
-      email: this.state.email,
+      username: this.state.email,
       password: this.state.password
     });
 

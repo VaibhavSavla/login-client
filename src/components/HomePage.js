@@ -2,7 +2,6 @@ import React from "react";
 import AuthService from "../services/auth.service";
 import { withRouter } from 'react-router-dom';
 import { Button } from "@material-ui/core";
-import Axios from "axios";
 
 class HomePage extends React.Component {
 

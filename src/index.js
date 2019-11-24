@@ -1,8 +1,8 @@
+import './index.css';
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./components/App";
-import Axios from "axios";
 import AuthService from "./services/auth.service";
 
 (async () => {

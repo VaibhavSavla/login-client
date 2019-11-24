@@ -1,0 +1,27 @@
+.password-container {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.btn-signin {
+  margin-left: -8px;
+}
+
+.btn-send-otp {
+  width: 6rem;
+}
+
+.input-otp {
+  width: 8rem;
+}
+
+.divider {
+  height: 0.1rem;
+  background-color: #757575;
+}
+
+.divider-text {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: #757575;
+}
