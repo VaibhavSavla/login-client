@@ -1,4 +1,4 @@
-import './SignUpPage.css'
+import './LoginPage.css'
 import React from "react";
 import { withRouter, Link } from 'react-router-dom';
 import TextField from "@material-ui/core/TextField";
@@ -10,7 +10,7 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import Typography from '@material-ui/core/Typography';
 import AuthService from "../services/auth.service";
 
-class SignUpPage extends React.Component {
+class LoginPage extends React.Component {
   state = { method: 'email', invalid: {} };
 
   formGroupName = () => {
@@ -254,4 +254,4 @@ class SignUpPage extends React.Component {
   }
 }
 
-export default withRouter(SignUpPage);
+export default withRouter(LoginPage);

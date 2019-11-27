@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import HomePage from './HomePage'
-import SignUpPage from './SignUpPage'
+import LoginPage from './LoginPage'
 import PrivateRoute from './PrivateRoute'
 
 class App extends React.Component {
@@ -16,10 +16,10 @@ class App extends React.Component {
     return (
       <Switch>
         <Route path="/signin">
-          <SignUpPage mode="signin" user={this.state} setUser={this.setUser} />
+          <LoginPage mode="signin" user={this.state} setUser={this.setUser} />
         </Route>
         <Route path="/signup">
-          <SignUpPage mode="signup" user={this.state} setUser={this.setUser} />
+          <LoginPage mode="signup" user={this.state} setUser={this.setUser} />
         </Route>
         <PrivateRoute isAuthenticated={this.state.isAuthenticated} path="/">
           <HomePage user={this.state} setUser={this.setUser} />
