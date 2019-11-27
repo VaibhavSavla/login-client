@@ -2,16 +2,16 @@ const axios = require("axios");
 
 const AuthService = {
   register: reqData => {
-    return axios.post("/apis/v1/auth/register", reqData);
+    return axios.post("/apis/auth/register", reqData);
   },
   login: reqData => {
-    return axios.post("/apis/v1/auth/login", reqData);
+    return axios.post("/apis/auth/login", reqData);
   },
   sendOtp: mobile => {
-    return axios.get(`/apis/v1/auth/sendOtp/${mobile}`);
+    return axios.get(`/apis/auth/sendOtp/${mobile}`);
   },
   logout: () => {
-    return axios.get("/apis/v1/auth/logout");
+    return axios.get("/apis/auth/logout");
   }
 };
 
