@@ -2,15 +2,17 @@ import React from "react";
 import AuthService from "../services/auth.service";
 import { withRouter } from 'react-router-dom';
 import { Button } from "@material-ui/core";
+import ProfileService from "../services/profile.service";
 
 class HomePage extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = props.user && props.user.profile
+    console.log(this.state)
   }
   render = () => {
-    return this.state && this.state.email ? (
+    return this.state ? (
       <>
         <h1>{this.state.firstName}</h1>
         <h1>{this.state.lastName}</h1>
@@ -24,7 +26,7 @@ class HomePage extends React.Component {
 
   componentDidMount = async () => {
     if (!this.state || !this.state.email) {
-      const response = await AuthService.profile();
+      const response = await ProfileService.profile();
       this.setState(response.data);
     }
   };

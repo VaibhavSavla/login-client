@@ -3,12 +3,12 @@ import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./components/App";
-import AuthService from "./services/auth.service";
+import ProfileService from './services/profile.service';
 
 (async () => {
   const user = { isAuthenticated: false, profile: null }
   try {
-    const profile = await AuthService.profile()
+    const profile = await ProfileService.profile()
     if (profile.status === 200) {
       user.isAuthenticated = true
       user.profile = profile.data

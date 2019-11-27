@@ -17,10 +17,10 @@ class App extends React.Component {
     return (
       <Switch>
         <Route path="/signin">
-          <SignInPage user={this.state} setUser={this.setUser} />
+          <SignUpPage mode="signin" user={this.state} setUser={this.setUser} />
         </Route>
         <Route path="/signup">
-          <SignUpPage user={this.state} setUser={this.setUser} />
+          <SignUpPage mode="signup" user={this.state} setUser={this.setUser} />
         </Route>
         <PrivateRoute isAuthenticated={this.state.isAuthenticated} path="/">
           <HomePage user={this.state} setUser={this.setUser} />
