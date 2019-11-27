@@ -13,6 +13,10 @@ const proxyCreatorRoute = (appRoute, target) => {
   const proxy = httpProxy.createProxyServer({
     proxyTimeout: 10000,
   })
+
+  proxy.on('error', function (err) {
+    return console.log(err);
+  })
   appRoute.all('/*', (req, res) => {
     proxy.web(req, res, {
       target
