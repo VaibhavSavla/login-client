@@ -17,6 +17,8 @@
 .container {
   margin: 0 auto;
   max-width: 600px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
 }
 
 .width-1-2 {
@@ -28,20 +30,24 @@
 }
 
 .mr-m {
-  margin-right: 1.6rem !important;
+  margin-right: 4% !important;
 }
 
 .mr-s {
-  margin-right: 0.8rem !important;
+  margin-right: 2% !important;
 }
 
 .mr-xs {
-  margin-right: 0.4rem !important;
+  margin-right: 1% !important;
 }
 
 .my-0 {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+}
+
+.mt-2 {
+  margin-top: 2rem !important;
 }
 
 .mt-4 {

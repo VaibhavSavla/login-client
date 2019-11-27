@@ -21,7 +21,7 @@
 }
 
 .divider-text {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
   color: #757575;
 }

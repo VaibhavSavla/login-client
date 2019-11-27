@@ -1,3 +1,4 @@
+import './SignUpPage.css'
 import React from "react";
 import { withRouter, Link } from 'react-router-dom';
 import TextField from "@material-ui/core/TextField";
@@ -6,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import VisibilityOffIcon from '@material-ui/icons/VisibilityOff';
 import VisibilityIcon from '@material-ui/icons/Visibility';
+import Typography from '@material-ui/core/Typography';
 import AuthService from "../services/auth.service";
 
 class SignUpPage extends React.Component {
@@ -41,7 +43,7 @@ class SignUpPage extends React.Component {
         <form className="mt-4" autoComplete="off">
           <div className="container">
             {this.props.mode === 'signup' ? this.formGroupName() : <></>}
-            <h2 className="mb-0">{this.props.mode === 'signup' ? 'Register' : 'Login'} With</h2>
+            <Typography variant="h5" className="mb-0 mt-2">{this.props.mode === 'signup' ? 'Register' : 'Login'} With</Typography>
             <TextField
               error={this.state.invalid['email']}
               className="width-1-1"
@@ -56,7 +58,7 @@ class SignUpPage extends React.Component {
             <div className="flex align-center password-container">
               <TextField
                 error={this.state.invalid['password']}
-                className="flex-grow mr-m my-0"
+                className="flex-grow mr-m my-0 text-password"
                 label="Password"
                 margin="normal"
                 variant="outlined"
@@ -85,7 +87,7 @@ class SignUpPage extends React.Component {
             </div>
             <div className="flex align-center">
               <span className="divider flex-grow"></span>
-              <h2 className="divider-text">OR</h2>
+              <Typography variant="h5" className="divider-text">OR</Typography>
               <span className="divider flex-grow"></span>
             </div>
             <div className="flex mb-4">
@@ -205,6 +207,7 @@ class SignUpPage extends React.Component {
   }
 
   signIn = async () => {
+    console.log(this.state.method)
     const credentials = {
       username: this.state.method === 'email' ? this.state.email : this.state.mobile,
       password: this.state.method === 'email' ? this.state.password : this.state.otp
